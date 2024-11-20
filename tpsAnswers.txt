@@ -1,0 +1,39 @@
+Angel Vargas
+
+TPS 1:
+    1.  The differences between procedures, functions, and methods are: procedures are sets of instructions that perform a specific task but do not return a value; functions return a value after 
+        execution; and methods are functions that are contained within the object or class they belong to.
+    
+    2.  This is just explantions
+
+    3.  This is done in proc1.s
+
+    4.  The linr is 12, and what this line does is it jumps to the Label SUM to execute the code under the label.
+
+    5.  Yes you could technically use j to jump to a specific label instead of jr $ra, bit it would less efficient cause using jr $ra ensures that the program can return to whatever address is stored in
+        $ra ,making it reusable for multiple calls.
+    
+    6.  The return address needs to be saved at line 12 by either using jal, ensuring the program resumes correctly at the next instruction after addi.
+
+    7.  There is an error, because the program counter value.
+
+    8.  The address in the text segment for sum is 0x00400020
+
+    9.  Replace addi $ra, $zero, 0 with addi $ra, $zero, 0x00400020 to save the correct return address, ensuring the program resumes at the next instruction after j SUM.
+
+    10. The new return address is 0x00400020, and the program outputs 15 after adding the values of m and n.
+
+    11. We should use jal instead of j, because this automaticallty saves the return address to $ra, making it easier to manage procedure calls without manually setting $ra.
+
+TPS 2:
+    1.  I believe the output will be 38, which was proven true once runned.
+
+    2.  Our group came up with the conclusion that the program is allocating a stack with 4 bytes to store the $s0 register value.
+
+    3.  SUM knows where to return because jal saves the return address in $ra.
+
+    4.  The $a0 register changes in SUM because it is overwritten, and this can be resolved by saving and restoring the $a0 with temp registers using the stack.
+
+    5.  The $s0 register in MAIN remains unchanged because SUM and SUB back up  and restore the $s0 using the stack.
+
+    6. Inside the proc2.s code
